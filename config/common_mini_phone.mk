@@ -1,8 +1,8 @@
 # Inherit common CM stuff
-$(call inherit-product, vendor/cm/config/common.mk)
+$(call inherit-product, vendor/adems/config/common.mk)
 
 # Include CM audio files
-include vendor/adems/config/cm_audio.mk
+include vendor/adems/config/audio.mk
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
