@@ -2,10 +2,10 @@
 # CyanogenMod Audio Files
 #
 
-ALARM_PATH := vendor/adems/prebuilt/common/media/audio/alarms
-NOTIFICATION_PATH := vendor/adems/prebuilt/common/media/audio/notifications
-RINGTONE_PATH := vendor/adems/prebuilt/common/media/audio/ringtones
-UI_PATH := vendor/adems/prebuilt/common/media/audio/ui
+ALARM_PATH := vendor/adems/rootdir/system/media/audio/alarms
+NOTIFICATION_PATH := vendor/adems/rootdir/system/media/audio/notifications
+RINGTONE_PATH := vendor/adems/rootdir/system/media/audio/ringtones
+UI_PATH := vendor/adems/rootdir/system/media/audio/ui
 
 # Alarms
 PRODUCT_COPY_FILES += \
@@ -13,6 +13,7 @@ PRODUCT_COPY_FILES += \
 
 # Notifications
 PRODUCT_COPY_FILES += \
+	$(NOTIFICATION_PATH)/toet-toet.mp3:system/media/audio/notifications/toet-toet.mp3 \
 	$(NOTIFICATION_PATH)/CyanDoink.ogg:system/media/audio/notifications/CyanDoink.ogg \
 	$(NOTIFICATION_PATH)/CyanMail.ogg:system/media/audio/notifications/CyanMail.ogg \
 	$(NOTIFICATION_PATH)/CyanMessage.ogg:system/media/audio/notifications/CyanMessage.ogg \

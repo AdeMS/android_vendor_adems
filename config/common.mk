@@ -69,8 +69,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
+ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+endif
 
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
@@ -133,16 +135,14 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     Launcher3 \
-    DSPManager \
-    libcyanogen-dsp \
-    audio_effects.conf \
+    MusicFX \
     CMWallpapers \
+    Music \
+    CMFileManager \
     LockClock \
     CMUpdater \
     CMFota \
-    CMAccount \
-    Music \
-    MusicFX
+    CMAccount
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -199,10 +199,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES +=  \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
-
-# Root Browser Free
-PRODUCT_COPY_FILES +=  \
-    vendor/adems/rootdir/system/app/BrowserFree.apk:system/app/BrowserFree.apk
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
